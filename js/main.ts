@@ -3,7 +3,7 @@ namespace silvester {
     console.log("main here, how're you doing?");
     export let crc2: CanvasRenderingContext2D;
     let form: HTMLFormElement;
-    let url: string = "https://ikaja.herokuapp.com/"
+    let url: string = "https://evion.herokuapp.com/";
 
     window.addEventListener("load", handleLoad);
     let canvas: HTMLCanvasElement;
@@ -29,9 +29,6 @@ namespace silvester {
         crc2.fill
 
         window.setInterval(update, 1000/fps);
-
-        // generateContent(saved[]);
-
     }
     
     function handleCanvasClick(_event: MouseEvent): void {
