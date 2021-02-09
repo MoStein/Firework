@@ -1,0 +1,41 @@
+body {
+    background-image: url(Sternenhimmel-high-detailed-starfield-background.jpg);
+    background-color: darkblue;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(168, 167, 167);
+    
+}
+header{
+    color: gold;
+    text-align: center;
+}
+div{
+    border: thin solid white;
+    margin: 1em;
+    /* margin-left: 400px; */
+    position: relative; 
+  
+    
+    
+}
+ 
+
+aside {
+    border: thin solid white;
+    margin: 1em;
+    margin-right: 900px; 
+    position: relative;
+}
+
+button{
+    border: 0;
+    background-color: grey;
+    align: center;
+    padding: 5px 10px;
+    width: auto;
+    cursor: pointer;
+}
+
+button:hover{
+    opacity: 0.7;
+}
