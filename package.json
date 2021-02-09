@@ -1,0 +1,23 @@
+{
+  "name": "firework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "node server/server.js remote"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MoStein/Firework.git"
+  },
+  "author": "Mo Stein",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MoStein/Firework/issues"
+  },
+  "homepage": "https://github.com/MoStein/Firework#readme",
+  "dependencies": {
+    "@types/mongodb": "^3.6.6",
+    "mongodb": "^3.6.4"
+  }
+}
