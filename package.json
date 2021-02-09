@@ -2,9 +2,9 @@
   "name": "firework",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "",
   "scripts": {
-    "start": "node server/server.js remote"
+    "start": "node server/server.js"
   },
   "repository": {
     "type": "git",
