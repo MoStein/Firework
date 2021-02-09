@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/silvester.css">
+    <audio src="Firework Explosion - Sound Effect.mp3" id="audio"></audio>
+    <script src="js/main.js"></script>
+    <script src="js/Vector.js"></script>
+    <script src="js/firework.js"></script>
+    <script src="js/particle.js"></script>
+    <script src="js/Circle.js"></script>
+    <script src="js/Star.js"></script>
+    <script src="js/Heart.js"></script>
+    <script src="js/Rect.js"></script>
+    <title>Silvester!</title>
+</head>
+<body>
+<header>
+    <h1>Virtual Fireworks by Moritz Stein 262591</h1>
+    <h3>Configure your fire work and light it up online!</h3>
+</header>
+    <aside id="Configure">
+        <h3>Configure your fire work</h3>
+    <form>
+        <fieldset>
+            <legend>Name your fire work</legend>
+            <textarea id="name" name="fireworkname" form="usrform">Enter here</textarea>
+        </fieldset>
+        <fieldset>
+            <legend>Choose a type</legend>
+            <select id="type" name="fireworktype">
+                <option value="circle">Circle</option>
+                <option value="star">Star</option>
+                <option value="heart">Heart</option>
+                <option value="rects">Rects</option>
+            </select>
+        </fieldset>
+        <fieldset id ="colourFieldset">
+            <legend>Choose a colour</legend>
+            <select id="colour" name="fireworkcolour">
+                <option value="green">Green</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="yellow">Yellow</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>Speed</legend>
+            <span id="spanSize">
+                Lame
+                <input type="range" name="fireworksize" id="size" min="1" max="10" step="1" value="1">
+                Fast
+                </span>
+        </fieldset>
+        <fieldset>
+            <legend>Amount of Particles</legend>
+            <span id="amountparticles">
+                10
+                <input type="range" name="fireworkamount" id="amount" min="10" max="30" step="1" value="20">
+                30
+                </span>
+        </fieldset>
+        <fieldset>
+            <legend>Particle Size</legend>
+            <span id="pize">
+                10 Pixels
+                <input type="range" name="fireworkparticle" id="pSize" min="10" max="20" step="1" value="10">
+                20 Pixels
+                </span>
+        </fieldset>
+        <fieldset>
+            <legend>Lifetime</legend>
+            <span id="life">
+                1 Sekunden
+                <input type="range" name="fireworklifetime" id="lifetime" min="1" max="5" step="1" value="2.5">
+                5 Sekunden
+                </span>
+        </fieldset>
+    </form>
+    </aside>
+    <div id="canvasdiv">
+        <h3>Click on the black space</h3>
+        <canvas id="canvas" width=800 height=600></canvas>
+    </div>
+    
+<button id="submit" type="submit">Save your fire work!</button>
+<div id="saved"></div>
+    
+    
+</body>
+</html>
