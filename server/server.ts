@@ -3,17 +3,16 @@ import * as Url from "url";
 import * as Mongo from "mongodb";
 
 export namespace silvester {
+    // let server: Http.Server = Http.createServer();
     interface Bomb {
         [type: string]: string | string[] | undefined;
     }
 
     let bombs: Mongo.Collection;
 
-    
-
     let port: number | string | undefined = process.env.PORT;
     if (port == undefined){
-        port = 5001;
+        port = 5005;
     }
 
     let databaseUrl: string = "mongodb+srv://MoStein:olympiamuenchen@cluster0.ywjph.mongodb.net/Fireworks?retryWrites=true&w=majority"

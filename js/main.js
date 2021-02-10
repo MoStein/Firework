@@ -11,7 +11,8 @@ var silvester;
 (function (silvester) {
     console.log("main here, how're you doing?");
     let form;
-    let url = "https://ikaja.herokuapp.com/";
+    let url = "https://evion.herokuapp.com/";
+    // let url: string = "http://localhost:5005";
     window.addEventListener("load", handleLoad);
     let canvas;
     let fireworks = [];
@@ -30,7 +31,6 @@ var silvester;
             silvester.crc2.fillRect(0, 0, canvas.width, canvas.height);
             silvester.crc2.fill;
             window.setInterval(update, 1000 / fps);
-            // generateContent(saved[]);
         });
     }
     function handleCanvasClick(_event) {

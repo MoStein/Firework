@@ -18,6 +18,7 @@
   "homepage": "https://github.com/MoStein/Firework#readme",
   "dependencies": {
     "@types/mongodb": "^3.6.6",
+    "@types/node": "^14.14.25",
     "mongodb": "^3.6.4"
   }
 }

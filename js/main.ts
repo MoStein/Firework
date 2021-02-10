@@ -4,6 +4,7 @@ namespace silvester {
     export let crc2: CanvasRenderingContext2D;
     let form: HTMLFormElement;
     let url: string = "https://evion.herokuapp.com/";
+    // let url: string = "http://localhost:5005";
 
     window.addEventListener("load", handleLoad);
     let canvas: HTMLCanvasElement;

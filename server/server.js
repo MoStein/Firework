@@ -18,7 +18,7 @@ var silvester;
     let bombs;
     let port = process.env.PORT;
     if (port == undefined) {
-        port = 5001;
+        port = 5005;
     }
     let databaseUrl = "mongodb+srv://MoStein:olympiamuenchen@cluster0.ywjph.mongodb.net/Fireworks?retryWrites=true&w=majority";
     startServer(port);
