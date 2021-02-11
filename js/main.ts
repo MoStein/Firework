@@ -17,10 +17,10 @@ namespace silvester {
         console.log("Load");
 
         form = <HTMLFormElement>document.querySelector("form");
-        canvas = document.querySelector("canvas");
+        canvas = <HTMLCanvasElement>document.querySelector("canvas");
         crc2 = canvas.getContext("2d");
 
-        let btnSubmit: HTMLElement = document.getElementById("submit");
+        let btnSubmit: HTMLElement = <HTMLElement>document.getElementById("submit");
 
         canvas.addEventListener("click", handleCanvasClick);
         btnSubmit.addEventListener("click", sendFireWork);
@@ -50,25 +50,25 @@ namespace silvester {
     function createFirework (tempPosition: Vector){
         console.log("create firework");
 
-        let sound = document.querySelector("audio");
+        let sound = <HTMLAudioElement>document.querySelector("audio");
         sound.play();
 
-        let typeTarget: HTMLElement = document.getElementById("type");
+        let typeTarget: HTMLElement = <HTMLElement>document.getElementById("type");
         let typeValue = typeTarget.value;
 
-        let colorTarget: HTMLElement = document.getElementById("colour");
+        let colorTarget: HTMLElement = <HTMLElement>document.getElementById("colour");
         let colorValue = colorTarget.value;
 
-        let radiusTarget: HTMLElement = document.getElementById("size");
+        let radiusTarget: HTMLElement = <HTMLElement>document.getElementById("size");
         let radiusValue = radiusTarget.value; 
 
-        let amountTarget: HTMLElement = document.getElementById("amount");
+        let amountTarget: HTMLElement = <HTMLElement>document.getElementById("amount");
         let amountValue = amountTarget.value;
 
-        let particleTarget: HTMLElement = document.getElementById("pSize");
+        let particleTarget: HTMLElement = <HTMLElement>document.getElementById("pSize");
         let particleValue = particleTarget.value;
 
-        let lifeTimeTarget: HTMLElement = document.getElementById("lifetime");
+        let lifeTimeTarget: HTMLElement = <HTMLElement>document.getElementById("lifetime");
         let lifeTimeValue = lifeTimeTarget.value;
         
         let firework: Firework = new Firework(tempPosition, typeValue, colorValue, radiusValue, amountValue, particleValue, lifeTimeValue*fps);
