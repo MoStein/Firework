@@ -4,7 +4,7 @@
   "description": "",
   "main": "",
   "scripts": {
-    "start": "node server/server.js remote"
+    "start": "node server/server.js"
   },
   "repository": {
     "type": "git",
