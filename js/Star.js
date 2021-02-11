@@ -1,3 +1,4 @@
+"use strict";
 var silvester;
 (function (silvester) {
     class Star extends silvester.Particle {

@@ -1,3 +1,4 @@
+"use strict";
 var silvester;
 (function (silvester) {
     class Rectangle extends silvester.Particle {

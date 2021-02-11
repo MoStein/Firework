@@ -1,3 +1,4 @@
+"use strict";
 var silvester;
 (function (silvester) {
     console.log("main here, how're you doing?");
