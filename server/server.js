@@ -6,7 +6,11 @@ const Url = require("url");
 const Mongo = require("mongodb");
 var silvester;
 (function (silvester) {
-    let bombs;
+    // let server: Http.Server = Http.createServer();
+    // interface Bomb {
+    //     [type: string]: string | string[] | undefined;
+    // }
+    // let bombs: Mongo.Collection;
     let port = process.env.PORT;
     if (port == undefined) {
         port = 5005;
@@ -24,7 +28,7 @@ var silvester;
         let options = { useNewUrlParser: true, useUnifiedTopology: true };
         let mongoClient = new Mongo.MongoClient(_url, options);
         await mongoClient.connect();
-        bombs = mongoClient.db("Silvester").collection("Fireworks");
+        // bombs = mongoClient.db("Silvester").collection("Fireworks");
     }
     function handleRequest(_request, _response) {
         console.log("Server here, what's up?");
@@ -37,13 +41,13 @@ var silvester;
             }
             let jsonString = JSON.stringify(url.query);
             _response.write(jsonString);
-            storeFireworks(url.query);
+            // storeFireworks(url.query);
         }
         _response.end();
     }
-    function storeFireworks(_bomb) {
-        // console.log("storing now");
-        bombs.insertOne(_bomb);
-    }
+    // function storeFireworks(_bomb: Bomb): void{
+    //     // console.log("storing now");
+    //     bombs.insertOne(_bomb);
+    // }
 })(silvester = exports.silvester || (exports.silvester = {}));
 //# sourceMappingURL=server.js.map
