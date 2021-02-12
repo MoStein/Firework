@@ -89,20 +89,26 @@ var silvester;
     //     } 
     // }
     // function recreateFirework(_event: MouseEvent){
-    //     let g = <HTMLSelectElement>document.getElementById("saved");
-    //     for (let i: number = 0;len = g.savedArray.length; i++){
+    //     // let g = <HTMLSelectElement>document.getElementById("saved");
+    //     for (let i: number = 0;i< savedArray.length; i++){
+    //         let g = savedArray[i];
+    //         if (g.click){
     //         let typeTarget: HTMLSelectElement = <HTMLSelectElement>document.getElementById("type");
-    //         typeTarget.value = savedArray[i].fireworktype;
+    //         typeTarget.value = g.fireworktype;
     //         let colorTarget: HTMLSelectElement = <HTMLSelectElement>document.getElementById("colour");
-    //         colorTarget.value = savedArray[i].firworkcolor;
+    //         colorTarget.value = g.firworkcolor;
     //         let speedTarget: HTMLInputElement = <HTMLInputElement>document.getElementById("speed");
-    //         speedTarget.value = savedArray[i].fireworkspeed;
+    //         speedTarget.value = g.fireworkspeed;
     //         let amountTarget: HTMLInputElement = <HTMLInputElement>document.getElementById("amount");
-    //         amountTarget = savedArray[i].fireworkamount;
+    //         amountTarget = g.fireworkamount;
     //         let particleTarget: HTMLInputElement = <HTMLInputElement>document.getElementById("pSize");
-    //         particleTarget = savedArray[i].fireworkparticle;
+    //         particleTarget = g.fireworkparticle;
     //         let lifeTimeTarget: HTMLInputElement = <HTMLInputElement>document.getElementById("lifetime");
-    //         lifeTimeTarget = savedArray[i].fireworklifetime;
+    //         lifeTimeTarget = g.fireworklifetime;
+    //         }
+    //         else {
+    //             return;
+    //         }
     //     }
     // }
 })(silvester || (silvester = {}));
