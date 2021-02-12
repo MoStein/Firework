@@ -13,12 +13,13 @@ namespace silvester {
     // let savedArray: FormData [] = [];
     let fps: number = 100;
 
+    //Load
     async function handleLoad(_event: Event):Promise<void> {
         console.log("Load");
 
         form = <HTMLFormElement>document.querySelector("form");
         canvas = <HTMLCanvasElement>document.querySelector("canvas");
-        crc2 = canvas.getContext("2d");
+        crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
 
         let btnSubmit: HTMLElement = <HTMLElement>document.getElementById("submit");
 
@@ -31,21 +32,12 @@ namespace silvester {
 
         window.setInterval(update, 1000/fps);
     }
-    
+    //Canvas
     function handleCanvasClick(_event: MouseEvent): void {
 
         let tempPosition: Vector = new Vector(_event.offsetX, _event.offsetY);
         createFirework(tempPosition);
 
-    }
-    export async function sendFireWork(_event: MouseEvent):Promise<void> {
-        console.log("submit fire work");
-        let formData: FormData = new FormData(form);
-        let query: URLSearchParams = new URLSearchParams(<any>formData);
-        let response: Response = await fetch(url + "?" + query.toString());
-        let responseText: string = await response.text();
-        // savedArray.push();
-        alert(responseText);
     }
     function createFirework (tempPosition: Vector){
         console.log("create firework");
@@ -53,25 +45,25 @@ namespace silvester {
         let sound = <HTMLAudioElement>document.querySelector("audio");
         sound.play();
 
-        let typeTarget: HTMLElement = <HTMLElement>document.getElementById("type");
-        let typeValue = typeTarget.value;
+        let typeTarget: HTMLSelectElement = <HTMLSelectElement>document.getElementById("type");
+        let typeValue: string = typeTarget.value;
 
-        let colorTarget: HTMLElement = <HTMLElement>document.getElementById("colour");
-        let colorValue = colorTarget.value;
+        let colorTarget: HTMLSelectElement = <HTMLSelectElement>document.getElementById("colour");
+        let colorValue: string = colorTarget.value;
 
-        let radiusTarget: HTMLElement = <HTMLElement>document.getElementById("size");
-        let radiusValue = radiusTarget.value; 
+        let speedTarget: HTMLInputElement = <HTMLInputElement>document.getElementById("speed");
+        let speedValue: any = speedTarget.value; 
 
-        let amountTarget: HTMLElement = <HTMLElement>document.getElementById("amount");
-        let amountValue = amountTarget.value;
+        let amountTarget: HTMLInputElement = <HTMLInputElement>document.getElementById("amount");
+        let amountValue: any = amountTarget.value;
 
-        let particleTarget: HTMLElement = <HTMLElement>document.getElementById("pSize");
-        let particleValue = particleTarget.value;
+        let particleTarget: HTMLInputElement = <HTMLInputElement>document.getElementById("pSize");
+        let particleValue: any = particleTarget.value;
 
-        let lifeTimeTarget: HTMLElement = <HTMLElement>document.getElementById("lifetime");
-        let lifeTimeValue = lifeTimeTarget.value;
+        let lifeTimeTarget: HTMLInputElement = <HTMLInputElement>document.getElementById("lifetime");
+        let lifeTimeValue: any = lifeTimeTarget.value;
         
-        let firework: Firework = new Firework(tempPosition, typeValue, colorValue, radiusValue, amountValue, particleValue, lifeTimeValue*fps);
+        let firework: Firework = new Firework(tempPosition, typeValue, colorValue, speedValue, amountValue, particleValue, lifeTimeValue*fps);
         fireworks.push(firework);
     }
     
@@ -91,5 +83,55 @@ namespace silvester {
             }
         }
     }
+    //Server & Database
+    export async function sendFireWork(_event: MouseEvent):Promise<void> {
+        console.log("submit fire work");
+        let formData: FormData = new FormData(form);
+        let query: URLSearchParams = new URLSearchParams(<any>formData);
+        let response: Response = await fetch(url + "?" + query.toString());
+        let responseText: string = await response.text();
+        alert(responseText);
+    }
+    // async function retrieveFireworks(): Promise<void> {
+    //     let response : Response = await fetch(url + "?" + "command=retrieve");
+    //     let responseText : string = await response.text();
+    //     savedArray.push(responseText.replace(/<br>/g, " "));
+    // }
+    // async function getSelect(){
+    //     console.log(savedArray.length);
+    //     let select = <HTMLSelectElement>document.getElementById("save");
+    //     for (let i: number = 0; i < savedArray.length; i++){
+    //         let options = savedArray[i];
+    //         let element = document.createElement("option");
+    //         element.textContent = options.name;
+    //         select.appendChild(element);
+    //         element.addEventListener("click", recreateFirework);
+    //     } 
+    // }
+    // function recreateFirework(_event: MouseEvent){
+    //     let g = <HTMLSelectElement>document.getElementById("saved");
+    //     for (let i: number = 0;len = g.savedArray.length; i++){
+
+    //         let typeTarget: HTMLSelectElement = <HTMLSelectElement>document.getElementById("type");
+    //         typeTarget.value = savedArray[i].fireworktype;
+
+    //         let colorTarget: HTMLSelectElement = <HTMLSelectElement>document.getElementById("colour");
+    //         colorTarget.value = savedArray[i].firworkcolor;
+
+    //         let speedTarget: HTMLInputElement = <HTMLInputElement>document.getElementById("speed");
+    //         speedTarget.value = savedArray[i].fireworkspeed;
+
+    //         let amountTarget: HTMLInputElement = <HTMLInputElement>document.getElementById("amount");
+    //         amountTarget = savedArray[i].fireworkamount;
+
+    //         let particleTarget: HTMLInputElement = <HTMLInputElement>document.getElementById("pSize");
+    //         particleTarget = savedArray[i].fireworkparticle;
+
+    //         let lifeTimeTarget: HTMLInputElement = <HTMLInputElement>document.getElementById("lifetime");
+    //         lifeTimeTarget = savedArray[i].fireworklifetime;
+    //     }
+        
+        
+    // }
 
 }

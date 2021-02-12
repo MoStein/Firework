@@ -37,7 +37,7 @@ export namespace silvester {
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
         console.log("Server here, what's up?");
 
-        _request.setHeader("content-type", "text/html; charset=utf-8");
+        _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
 
        if (_request.url){
