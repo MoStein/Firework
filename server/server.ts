@@ -5,7 +5,7 @@ import * as Mongo from "mongodb";
 export namespace silvester {
     // let server: Http.Server = Http.createServer();
     interface Bomb {
-        [type: string]: string | string[] | undefined;
+        [type: string]: string | string[] | any;
     }
 
     let bombs: Mongo.Collection;
