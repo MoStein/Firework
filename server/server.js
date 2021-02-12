@@ -26,7 +26,7 @@ var silvester;
         await mongoClient.connect();
         bombs = mongoClient.db("Silvester").collection("Fireworks");
     }
-    function handleRequest(_request, _response) {
+    async function handleRequest(_request, _response) {
         console.log("Server here, what's up?");
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");

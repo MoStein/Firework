@@ -34,7 +34,7 @@ export namespace silvester {
         bombs = mongoClient.db("Silvester").collection("Fireworks");
     }
 
-    function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
+    async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
         console.log("Server here, what's up?");
 
         _response.setHeader("content-type", "text/html; charset=utf-8");
